@@ -24,7 +24,7 @@ export const BaseNode: React.FC<BaseNodeProps> = ({
     const initialData = { ...data };
     config.fields.forEach((field) => {
       if (initialData[field.key] === undefined) {
-        initialData[field.key] = field.defaultValue || "";
+        initialData[field.key] = field.defaultValue ?? "";
       }
     });
     return initialData;
@@ -48,7 +48,7 @@ export const BaseNode: React.FC<BaseNodeProps> = ({
   );
 
   const renderField = (field: NodeField) => {
-    const value = localData[field.key] || field.defaultValue || "";
+    const value = localData[field.key] ?? field.defaultValue ?? "";
 
     switch (field.type) {
       case "select":
@@ -63,9 +63,9 @@ export const BaseNode: React.FC<BaseNodeProps> = ({
             <Select
               value={value}
               onValueChange={(val) => handleFieldChange(field.key, val)}
-              options={field.options || []} // Pass options directly
+              options={field.options || []}
               placeholder={field.placeholder}
-              triggerClassName="h-8 text-xs" // Apply trigger specific styles
+              triggerClassName="h-8 text-xs"
             />
           </div>
         );
@@ -143,7 +143,7 @@ export const BaseNode: React.FC<BaseNodeProps> = ({
           position={handle.position}
           id={handle.id}
           style={handle.style}
-          className={`w-3 h-3 ${
+          className={`w-5 h-5 ${
             handle.type === "source"
               ? "bg-blue-500 border-blue-600"
               : "bg-green-500 border-green-600"

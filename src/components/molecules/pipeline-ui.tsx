@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import {
   ReactFlow,
@@ -32,9 +31,6 @@ const nodeTypes = {
   text: NodeFactory,
   calculator: NodeFactory,
   database: NodeFactory,
-  filter: NodeFactory,
-  transformer: NodeFactory,
-  analytics: NodeFactory,
 };
 
 export const PipelineUI: React.FC = () => {
@@ -176,6 +172,16 @@ export const PipelineUI: React.FC = () => {
           fitViewOptions={{
             padding: 0.2,
           }}
+          // onEdgesDelete={(deletedEdges) => {
+          //   setEdges((eds) =>
+          //     eds.filter(
+          //       (edge) => !deletedEdges.some((de) => de.id === edge.id)
+          //     )
+          //   );
+          // }}
+          onEdgeClick={(_event, edge) => {
+            setEdges((eds) => eds.filter((e) => e.id !== edge.id));
+          }}
         >
           <Background
             size={1}
@@ -200,12 +206,6 @@ export const PipelineUI: React.FC = () => {
                   return "#f59e0b";
                 case "database":
                   return "#06b6d4";
-                case "filter":
-                  return "#84cc16";
-                case "transformer":
-                  return "#ec4899";
-                case "analytics":
-                  return "#6366f1";
                 default:
                   return "#6b7280";
               }

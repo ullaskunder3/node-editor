@@ -8,9 +8,6 @@ import {
   Type,
   Calculator,
   Database,
-  Filter,
-  Shuffle,
-  BarChart3,
 } from "lucide-react";
 
 export const PipelineToolbar: React.FC = () => {
@@ -56,27 +53,6 @@ export const PipelineToolbar: React.FC = () => {
       icon: <Database className="w-4 h-4" />,
       color: "#06b6d4",
       description: "Database queries",
-    },
-    {
-      type: "filter",
-      label: "Filter",
-      icon: <Filter className="w-4 h-4" />,
-      color: "#84cc16",
-      description: "Data filtering",
-    },
-    {
-      type: "transformer",
-      label: "Transform",
-      icon: <Shuffle className="w-4 h-4" />,
-      color: "#ec4899",
-      description: "Data transformation",
-    },
-    {
-      type: "analytics",
-      label: "Analytics",
-      icon: <BarChart3 className="w-4 h-4" />,
-      color: "#6366f1",
-      description: "Data analysis",
     },
   ];
 
