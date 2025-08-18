@@ -1,6 +1,5 @@
 import { type PipelineData, type PipelineResponse } from "@types";
-const BASE_URL = import.meta.env.BASE_URL;
-console.log(BASE_URL);
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const parsePipeline = async (
   pipelineData: PipelineData
 ): Promise<PipelineResponse> => {
