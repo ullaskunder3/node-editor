@@ -4,10 +4,10 @@ import {
   Brain,
   Calculator,
   Database,
-  Filter,
-  Shuffle,
-  BarChart3,
-  MessageSquare,
+  // Filter,
+  // Shuffle,
+  // BarChart3,
+  // MessageSquare,
 } from "lucide-react";
 import { Position } from "@xyflow/react";
 import type { BaseNodeConfig } from "@types";
