@@ -5,6 +5,9 @@ It allows drag-and-drop creation of nodes, configurable connections, and backend
 
 ---
 
+DEMO:
+<img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/25f98903-4252-4495-bdea-0ab0a587bc2d" />
+
 ## ✨ Features
 
 - 🎨 **Drag & Drop Nodes** – Build pipelines visually using a customizable palette.
